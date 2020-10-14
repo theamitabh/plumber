@@ -3,13 +3,14 @@ pipeline {
   stages {
     stage('Buzz Buzz') {
       steps {
-        echo 'First Step is a great step'
+        echo 'Bees Buzz!'
       }
     }
 
     stage('Bees Bees') {
       steps {
-        echo 'Stage 2 begins now'
+        echo 'Stage 2.1 begins now'
+        echo 'Stage 2.2 ends'
       }
     }
 
