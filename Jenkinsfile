@@ -3,15 +3,18 @@ pipeline {
   stages {
     stage('Buzz Build') {
       steps {
-        sh './jenkins/build.sh'
+        sh 'echo Build stage with $CLOUD_NAME'
       }
     }
 
     stage('Buzz Test') {
       steps {
-        sh './jenkins/test-all.sh'
+        sh 'echo Test Stage with $CLOUD_NAME'
       }
     }
 
+  }
+  environment {
+    CLOUD_NAME = 'azure'
   }
 }
