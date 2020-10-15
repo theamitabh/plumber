@@ -7,7 +7,7 @@ pipeline {
       }
     }
 
-    stage('Test 1') {
+    stage('Test in AZ') {
       parallel {
         stage('Test 1') {
           steps {
@@ -15,9 +15,9 @@ pipeline {
           }
         }
 
-        stage('Test 2') {
+        stage('Test in GCP') {
           steps {
-            echo 'Testing Parallel stages'
+            echo 'Google testing going on.....'
           }
         }
 
