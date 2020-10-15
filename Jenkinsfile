@@ -1,15 +1,26 @@
 pipeline {
   agent any
   stages {
-    stage('Buzz Build') {
+    stage(' Build') {
       steps {
         sh 'echo Build stage with $CLOUD_NAME'
       }
     }
 
-    stage('Buzz Test') {
-      steps {
-        sh 'echo Test Stage with $CLOUD_NAME'
+    stage('Test 1') {
+      parallel {
+        stage('Test 1') {
+          steps {
+            sh 'echo Test Stage with $CLOUD_NAME'
+          }
+        }
+
+        stage('Test 2') {
+          steps {
+            echo 'Testing Parallel stages'
+          }
+        }
+
       }
     }
 
